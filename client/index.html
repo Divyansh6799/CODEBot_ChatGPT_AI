@@ -17,7 +17,9 @@
       <h1 style="color:rgb(211, 64, 11);">CODEBot - Your Personal AI</h1>
       <i class='fa fa-github' style='font-size:20px;color: rgb(226, 75, 190)'>&nbsp;<a style="color:rgb(120, 161, 202)" href="https://github.com/Divyansh6799">Made by Divyansh Trivedi</a></i>
     </div>
-    <div id="chat_container"></div>
+    <div id="chat_container">
+     
+    </div>
     <form>
       <textarea name="prompt" id="txt" rows="1" cols="1" placeholder="Ask codebot..."></textarea>
       <button type="submit" id="send"><img src="assets/send.svg" alt="send" />
@@ -52,8 +54,20 @@
       document.getElementById("mic").innerHTML = "Error Occured! Tap To Speak Again"
       document.getElementById("mic").insertAdjacentHTML('beforeEnd', '<i class="fa fa-microphone" style="font-size:25px;color:red"></i>');
     }
+    function myFunction() {
+      var value = document.getElementById("txt").value;
+      var copyText = document.createElement("textarea");
+      copyText.value = value;
+      copyText.style.position = "fixed";
+      copyText.style.top = "-1000vh";
+      document.body.append(copyText)
+      copyText.select();
+      copyText.setSelectionRange(0, 99999)
+      document.execCommand("copy");
+      console.log(value)
+      copyText.remove()
+    }
   </script>
   <script type="module" src="script.js"></script>
 </body>
-
 </html>

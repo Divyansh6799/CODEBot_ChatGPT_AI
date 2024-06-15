@@ -56,6 +56,7 @@ function chatStripe(isAi, value, uniqueId) {
                     />
                 </div>
                 <div class="message" id=${uniqueId}>${value}</div>
+                <button id="cp" style="position:relative;top:2px;font-size:18px;color:rgb(230, 123, 22)" onclick="myFunction">copy text</button>
             </div>
         </div>
     `
@@ -116,3 +117,4 @@ form.addEventListener('keyup', (e) => {
         handleSubmit(e)
     }
 })
+
